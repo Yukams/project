@@ -17,6 +17,7 @@ function test_commandcrypt {
 	do
 	    $BASE/dh_crypt $i &> /dev/null
 	    RET=$?
+        echo $?
 	    [ $RET -eq 255 ] && printf "\t%-12s [${ok}OK${wipe}]\n" "dh_crypt $i"
 	    [ $RET -ne 255 ] && printf "\t%-12s [${ko}KO${wipe}]\n" "dh_crypt $i" && RET=2 && return;
 	done

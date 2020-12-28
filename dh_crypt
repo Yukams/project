@@ -1,0 +1,82 @@
+#! /bin/sh
+
+key=""
+fromFile=""
+toFile=""
+cypherMethod=""
+cypherVector=""
+
+if [ `echo $@ | grep -ce '-h'` -eq 1 ]
+then
+    echo "\nUsage : $0 [-h] [-i filename] [-o filename] [-k key] [-m [xor] [cbc-crypt|cbc-uncrypt vector]]\n\nOptions :\n[-h]\t\t: Prints help about the command\n[-i filename]\t: File to read the message we want to cypher\n[-o filename]\t: File to write what we cyphered\n[-k key]\t: Key used to cypher\n\n[-m [xor] [cbc-crypt|cbc-uncrypt vector]]\n\t\t: Name of the method used to cypher and eventually, its vector"
+    exit 9
+fi
+
+while getopts "i:o:k:m:h" option
+do
+    case $option in
+        \?)
+            echo "\nUsage : $0 [-h] [-i filename] [-o filename] [-k key] [-m xor|cbc-crypt|cbc-uncrypt vector]";;
+        i)
+            if [ ! -f $OPTARG ]
+            then
+                echo "Fichier \"$OPTARG\" introuvable"
+                exit 1
+            elif [ ! -r $OPTARG ]
+            then
+                echo "Impossible de lire le fichier \"$OPTARG\""
+                exit 2
+            fi
+            fromFile="$OPTARG"
+            ;;
+        o)
+            if [ ! -f $OPTARG ]
+            then
+                echo "Fichier \"$OPTARG\" introuvable"
+                exit 3
+            elif [ ! -w $OPTARG ]
+            then
+                echo "Impossible d'écrire sur le fichier \"$OPTARG\""
+                exit 4
+            fi
+            toFile="$OPTARG"
+            ;;
+        m)
+            sub=("$OPTARG")
+            until [[ $(eval "echo \${$OPTIND}") =~ ^-.* ]] || [ -z $(eval "echo \${$OPTIND}") ];
+            do
+                sub+=($(eval "echo \${$OPTIND}"))
+                OPTIND=$((OPTIND + 1))
+            done
+            
+            if [ `echo ${sub[@]} | wc -w` -gt 2 ]
+            then
+                echo "Option -m should be used with one argument (\"xor\") or two (\"cbc-crypt\"|\"cbc-uncrypt\" <initVector>)"
+                exit 5
+            else
+                if [ "${sub[0]}" != "cbc-crypt" -a "${sub[0]}" != "cbc-uncrypt" -a "${sub[0]}" != "xor" ]
+                then
+                    echo "Option -m should use as first argument \"xor\"|\"cbc-crypt\"|\"cbc-uncrypt\""
+                    exit 6
+                else
+                    if [ "${sub[0]}" = "xor" -a "${sub[1]}" != "" ]
+                    then
+                        echo "Option -m xor should have only one argument (\"cbc\")"
+                        exit 7
+                    elif [ "${sub[0]}" = "cbc-crypt" -o "${sub[0]}" = "cbc-uncrypt" -a "${sub[1]}" = "" ]
+                    then
+                        echo "Option -m cbc-crypt|cbc-uncrypt should have a second argument <initVector>"
+                        exit 8
+                    fi
+                fi
+            fi
+            cypherMethod="${sub[0]}"
+            cypherVector="${sub[1]}"
+            ;;
+        k)
+            key=$OPTARG
+            ;;
+    esac
+done
+exit 0;
+
