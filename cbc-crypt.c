@@ -80,18 +80,18 @@ void cbc_crypt(char* file_name, char* file_to_write, char* vector, char* key) {
 
 int main(int argc, char *argv[]) {
     if( argc == 5 ) {
-        if(strlen(argv[5]) != 16) {
+        if(strlen(argv[4]) != 16) {
             printf("WARNING : Initial vector MUST be 16 char long. Exiting the program");
             exit(5);
         }
-        char vector[strlen(argv[5])+1];
-        strcpy(vector, argv[5]);
-        char key[strlen(argv[2])+1];
-        strcpy(key, argv[2]);
-        char origin_file[strlen(argv[3])+1];
-        strcpy(origin_file, argv[3]);
-        char output_file[strlen(argv[4])+1];
-        strcpy(output_file, argv[4]);
+        char vector[strlen(argv[4])+1];
+        strcpy(vector, argv[4]);
+        char key[strlen(argv[1])+1];
+        strcpy(key, argv[1]);
+        char origin_file[strlen(argv[2])+1];
+        strcpy(origin_file, argv[2]);
+        char output_file[strlen(argv[3])+1];
+        strcpy(output_file, argv[3]);
         
         cbc_crypt(origin_file, output_file, vector , key); // Encrypts
     }

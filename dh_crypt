@@ -64,7 +64,7 @@ do
                     then
                         echo "Option -m xor should have only one argument (\"cbc\")"
                         exit 255
-                    elif [ "${sub[0]}" = "cbc-crypt" -o "${sub[0]}" = "cbc-uncrypt" -a "${sub[1]}" = "" ]
+                    elif [ \( "${sub[0]}" = "cbc-crypt" -o "${sub[0]}" = "cbc-uncrypt" \) -a "${sub[1]}" = "" ]
                     then
                         echo "Option -m cbc-crypt|cbc-uncrypt should have a second argument <initVector>"
                         exit 255

@@ -67,28 +67,28 @@ int test_FilesAreNotEquals(char* filename_B, char* filename_A) {
 
 int main(int argc, char *argv[]) {
     if( argc == 4 ) {
-        char key[strlen(argv[2])+1];
-        strcpy(key, argv[2]);
-        char origin_file[strlen(argv[3])+1];
-        strcpy(origin_file, argv[3]);
-        char output_file[strlen(argv[4])+1];
-        strcpy(output_file, argv[4]);
+        char key[strlen(argv[1])+1];
+        strcpy(key, argv[1]);
+        char origin_file[strlen(argv[2])+1];
+        strcpy(origin_file, argv[2]);
+        char output_file[strlen(argv[3])+1];
+        strcpy(output_file, argv[3]);
         
         xor(origin_file, output_file, key);
         
         if (test_FilesAreNotEquals(origin_file, output_file)) {
-            printf("Success : Files are not equals\n");
+            printf("\nSuccess : Files are not equals\n");
         } else {
-            printf("ERROR : Files are equals\n");
+            printf("\nERROR : Files are equals\n");
             exit(3);
         }
     }
     else if( argc > 4 ) {
-        printf("Too many arguments supplied. Expected three. [key, filename_origin, filename_to_write]\n");
+        printf("\nToo many arguments supplied. Expected three. [key, filename_origin, filename_to_write]\n");
         exit(3);
     }
     else {
-        printf("Three arguments expected. [key, filename_origin, filename_to_write]\n");
+        printf("\nThree arguments expected. [key, filename_origin, filename_to_write]\n");
         exit(4);
     }
     

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 void cbc_uncrypt(char* file_name, char* file_to_write, char* vector, char* key) {
     FILE* fromFile = fopen(file_name, "r");
@@ -77,61 +78,32 @@ void cbc_crypt(char* file_name, char* file_to_write, char* vector, char* key) {
     fclose(toFile);
 }
 
-
-// Return file size
-int getFileSize(FILE* file) {
-    fseek(file, 0L, SEEK_END);
-    int size = ftell(file);
-    fseek(file, 0L, SEEK_SET);
-    return size+1;
-}
-
-// Returns "true" if files are equals, "false" otherwise
-// B = Before, A = After
-int test_FilesAreEquals(char* filename_B, char* filename_A) {
-    // Tests if files content is identical
-    FILE* file_B = fopen(filename_B, "r");
-    FILE* file_A = fopen(filename_A, "r");
-
-    // Tests if files have the same size
-    int size_B = getFileSize(file_B);
-    if (getFileSize(file_A) != size_B) {
-        fclose(file_B);
-        fclose(file_A);
-        return 0;
-    }
-    
-    char ch1, ch2;
-    while((ch1 = fgetc(file_B)) != EOF && (ch2 = fgetc(file_A))) {
-        if (ch1 != ch2) {
-            return 0;
-            fclose(file_B);
-            fclose(file_A);
+int main(int argc, char *argv[]) {
+    if( argc == 5 ) {
+        if(strlen(argv[4]) != 16) {
+            printf("WARNING : Initial vector MUST be 16 char long. Exiting the program");
+            exit(5);
         }
+        char vector[strlen(argv[4])+1];
+        strcpy(vector, argv[4]);
+        char key[strlen(argv[1])+1];
+        strcpy(key, argv[1]);
+        char origin_file[strlen(argv[2])+1];
+        strcpy(origin_file, argv[2]);
+        char output_file[strlen(argv[3])+1];
+        strcpy(output_file, argv[3]);
+        
+        cbc_crypt(origin_file, output_file, vector , key); // Encrypts
     }
-
-    fclose(file_B);
-    fclose(file_A);
-    return 1;
-}
-
-int main() {
-    char vector[16] = "ABCDEFGHABCDEFGH";
-    char key[100] = "gweek";
-    char origin_file[100] = "cbc.c";
-    char crypted_file[100] = "cbcCrypted.txt";
-    char uncrypted_file[100] = "cbcUncrypted.txt";
-    
-    cbc_crypt(origin_file, crypted_file, vector , key); // Encrypts
-    cbc_uncrypt(crypted_file, uncrypted_file, vector, key); // Uncrypts
-    
-    if (test_FilesAreEquals(origin_file, uncrypted_file)) {
-        printf("Success : Files are equals\n");
-    } else {
-        printf("ERROR : Files are not equals\n");
+    else if( argc > 5 ) {
+        printf("Too many arguments supplied. Expected four. [key, filename_origin, filename_to_write, init_vector]\n");
         exit(3);
+    }
+    else {
+        printf("Four arguments expected. [key, filename_origin, filename_to_write, init_vector]\n");
+        exit(4);
     }
     
     return 0;
 }
-          
+             
