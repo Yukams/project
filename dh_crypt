@@ -9,23 +9,24 @@ cypherVector=""
 if [ `echo $@ | grep -ce '-h'` -eq 1 ]
 then
     echo "\nUsage : $0 [-h] [-i filename] [-o filename] [-k key] [-m [xor] [cbc-crypt|cbc-uncrypt vector]]\n\nOptions :\n[-h]\t\t: Prints help about the command\n[-i filename]\t: File to read the message we want to cypher\n[-o filename]\t: File to write what we cyphered\n[-k key]\t: Key used to cypher\n\n[-m [xor] [cbc-crypt|cbc-uncrypt vector]]\n\t\t: Name of the method used to cypher and eventually, its vector"
-    exit 9
+    exit 255
 fi
 
 while getopts "i:o:k:m:h" option
 do
     case $option in
         \?)
-            echo "\nUsage : $0 [-h] [-i filename] [-o filename] [-k key] [-m xor|cbc-crypt|cbc-uncrypt vector]";;
+            echo "\nUsage : $0 [-h] [-i filename] [-o filename] [-k key] [-m xor|cbc-crypt|cbc-uncrypt vector]"
+            exit 255;;
         i)
             if [ ! -f $OPTARG ]
             then
                 echo "Fichier \"$OPTARG\" introuvable"
-                exit 1
+                exit 255
             elif [ ! -r $OPTARG ]
             then
                 echo "Impossible de lire le fichier \"$OPTARG\""
-                exit 2
+                exit 255
             fi
             fromFile="$OPTARG"
             ;;
@@ -33,11 +34,11 @@ do
             if [ ! -f $OPTARG ]
             then
                 echo "Fichier \"$OPTARG\" introuvable"
-                exit 3
+                exit 255
             elif [ ! -w $OPTARG ]
             then
                 echo "Impossible d'écrire sur le fichier \"$OPTARG\""
-                exit 4
+                exit 255
             fi
             toFile="$OPTARG"
             ;;
@@ -52,21 +53,21 @@ do
             if [ `echo ${sub[@]} | wc -w` -gt 2 ]
             then
                 echo "Option -m should be used with one argument (\"xor\") or two (\"cbc-crypt\"|\"cbc-uncrypt\" <initVector>)"
-                exit 5
+                exit 255
             else
                 if [ "${sub[0]}" != "cbc-crypt" -a "${sub[0]}" != "cbc-uncrypt" -a "${sub[0]}" != "xor" ]
                 then
                     echo "Option -m should use as first argument \"xor\"|\"cbc-crypt\"|\"cbc-uncrypt\""
-                    exit 6
+                    exit 255
                 else
                     if [ "${sub[0]}" = "xor" -a "${sub[1]}" != "" ]
                     then
                         echo "Option -m xor should have only one argument (\"cbc\")"
-                        exit 7
+                        exit 255
                     elif [ "${sub[0]}" = "cbc-crypt" -o "${sub[0]}" = "cbc-uncrypt" -a "${sub[1]}" = "" ]
                     then
                         echo "Option -m cbc-crypt|cbc-uncrypt should have a second argument <initVector>"
-                        exit 8
+                        exit 255
                     fi
                 fi
             fi
@@ -78,5 +79,8 @@ do
             ;;
     esac
 done
+
+./$cypherMethod $key $fromFile $toFile $cypherVector
+
 exit 0;
 

@@ -1,0 +1,137 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+void cbc_uncrypt(char* file_name, char* file_to_write, char* vector, char* key) {
+    FILE* fromFile = fopen(file_name, "r");
+    FILE* toFile = fopen(file_to_write, "w");
+    if (fromFile == NULL || toFile == NULL) {
+          printf("Error while opening the file.\n");
+          exit(2);
+    }
+    
+    int k=0;
+    int block=0;
+    char ch;
+    char v[16];
+    for(int i=0; i<16; i++) {
+        v[i]=vector[i];
+    }
+    
+    while((ch = fgetc(fromFile)) != EOF || block != 0) {
+        if(ch == EOF) {
+            ch = ' ';
+        }
+        char output = (ch^key[k])^v[block];
+        fprintf(toFile, "%c", output);
+        v[block] = ch;
+        
+        block++;
+        k++;
+        if(block >= 16) {
+            k = 0;
+            block = 0;
+        } else if (key[k] == '\0') {
+            k = 0;
+        }
+    }
+    
+    fclose(fromFile);
+    fclose(toFile);
+}
+
+void cbc_crypt(char* file_name, char* file_to_write, char* vector, char* key) {
+    FILE* fromFile = fopen(file_name, "r");
+    FILE* toFile = fopen(file_to_write, "w");
+    if (fromFile == NULL || toFile == NULL) {
+          printf("Error while opening the file.\n");
+          exit(1);
+    }
+    
+    int k=0;
+    int block=0;
+    char ch;
+    char v[16];
+    for(int i=0; i<16; i++) {
+        v[i]=vector[i];
+    }
+    
+    while((ch = fgetc(fromFile)) != EOF || block != 0) {
+        if(ch == EOF) {
+            ch = ' ';
+        }
+        char output = (v[block]^ch)^key[k];
+        fprintf(toFile, "%c", output);
+        v[block] = output;
+        
+        block++;
+        k++;
+        if(block >= 16) {
+            k = 0;
+            block = 0;
+        } else if (key[k] == '\0') {
+            k = 0;
+        }
+    }
+    
+    fclose(fromFile);
+    fclose(toFile);
+}
+
+
+// Return file size
+int getFileSize(FILE* file) {
+    fseek(file, 0L, SEEK_END);
+    int size = ftell(file);
+    fseek(file, 0L, SEEK_SET);
+    return size+1;
+}
+
+// Returns "true" if files are equals, "false" otherwise
+// B = Before, A = After
+int test_FilesAreEquals(char* filename_B, char* filename_A) {
+    // Tests if files content is identical
+    FILE* file_B = fopen(filename_B, "r");
+    FILE* file_A = fopen(filename_A, "r");
+
+    // Tests if files have the same size
+    int size_B = getFileSize(file_B);
+    if (getFileSize(file_A) != size_B) {
+        fclose(file_B);
+        fclose(file_A);
+        return 0;
+    }
+    
+    char ch1, ch2;
+    while((ch1 = fgetc(file_B)) != EOF && (ch2 = fgetc(file_A))) {
+        if (ch1 != ch2) {
+            return 0;
+            fclose(file_B);
+            fclose(file_A);
+        }
+    }
+
+    fclose(file_B);
+    fclose(file_A);
+    return 1;
+}
+
+int main() {
+    char vector[16] = "ABCDEFGHABCDEFGH";
+    char key[100] = "gweek";
+    char origin_file[100] = "cbc.c";
+    char crypted_file[100] = "cbcCrypted.txt";
+    char uncrypted_file[100] = "cbcUncrypted.txt";
+    
+    cbc_crypt(origin_file, crypted_file, vector , key); // Encrypts
+    cbc_uncrypt(crypted_file, uncrypted_file, vector, key); // Uncrypts
+    
+    if (test_FilesAreEquals(origin_file, uncrypted_file)) {
+        printf("Success : Files are equals\n");
+    } else {
+        printf("ERROR : Files are not equals\n");
+        exit(3);
+    }
+    
+    return 0;
+}
+          
