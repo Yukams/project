@@ -31,15 +31,6 @@ do
             fromFile="$OPTARG"
             ;;
         o)
-            if [ ! -f $OPTARG ]
-            then
-                echo "Fichier \"$OPTARG\" introuvable"
-                exit 255
-            elif [ ! -w $OPTARG ]
-            then
-                echo "Impossible d'écrire sur le fichier \"$OPTARG\""
-                exit 255
-            fi
             toFile="$OPTARG"
             ;;
         m)

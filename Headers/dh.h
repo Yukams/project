@@ -12,7 +12,7 @@
 #include <math.h>
 #include <time.h>
 #include <ctype.h> // opérations sur les caractères
-#include "dh_bal.h"
+/*#include "dh_bal.h"*/
 
 #define MAX_FACTEURS 10 // nb max de facteurs premiers d'un nombre
 #define BLOCK_SIZE 16 // taille des blocs pour CBC
