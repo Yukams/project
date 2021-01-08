@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-typedef unsigned char byte;
+#include "../Headers/xor.h"
 
 // Encrypt the message contained in <file_name> with the <key> and writes it in <file_to_write>
 void xor(char* file_name, char* file_to_write, char* key) {
@@ -64,36 +63,5 @@ int test_FilesAreNotEquals(char* filename_B, char* filename_A) {
 
     fclose(file_B);
     fclose(file_A);
-    return 0;
-}
-
-
-int main(int argc, char *argv[]) {
-    if( argc == 4 ) {
-        char key[strlen(argv[1])+1];
-        strcpy(key, argv[1]);
-        char origin_file[strlen(argv[2])+1];
-        strcpy(origin_file, argv[2]);
-        char output_file[strlen(argv[3])+1];
-        strcpy(output_file, argv[3]);
-        
-        xor(origin_file, output_file, key);
-        
-        if (test_FilesAreNotEquals(origin_file, output_file)) {
-            printf("\nSuccess : Files are not equals\n");
-        } else {
-            printf("\nERROR : Files are equals\n");
-            exit(3);
-        }
-    }
-    else if( argc > 4 ) {
-        printf("\nToo many arguments supplied. Expected three. [key, filename_origin, filename_to_write]\n");
-        exit(3);
-    }
-    else {
-        printf("\nThree arguments expected. [key, filename_origin, filename_to_write]\n");
-        exit(4);
-    }
-    
     return 0;
 }

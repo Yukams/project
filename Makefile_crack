@@ -1,0 +1,11 @@
+#! /bin/sh
+
+mkdir .temp
+cd .temp
+gcc -c ../c-files/dh_crack.c
+gcc -c ../c-files/crack_c1.c
+gcc -Wall dh_crack.o crack_c1.o -o ../dh_crack
+rm dh_crack.o crack_c1.o
+cd ..
+rmdir .temp
+

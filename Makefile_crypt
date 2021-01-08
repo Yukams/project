@@ -1,0 +1,12 @@
+#! /bin/sh
+
+mkdir .temp
+cd .temp
+gcc -c ../c-files/cbc-crypt.c
+gcc -c ../c-files/dh_crypt.c
+gcc -c ../c-files/xor.c
+gcc -c ../c-files/cbc-uncrypt.c
+gcc -Wall cbc-crypt.o dh_crypt.o xor.o cbc-uncrypt.o -o ../dh_crypt
+rm cbc-crypt.o dh_crypt.o xor.o cbc-uncrypt.o
+cd ..
+rmdir .temp

@@ -1,6 +1,10 @@
 #! /bin/sh
 
-gcc -c Headers/dh_prime.c
-gcc -c dh_genkey.c
-gcc dh_prime.o dh_genkey.o -o dh_genkey
+mkdir .temp
+cd .temp
+gcc -c ../c-files/dh_prime.c
+gcc -c ../c-files/dh_genkey.c
+gcc -Wall dh_prime.o dh_genkey.o -o ../dh_genkey
 rm dh_genkey.o dh_prime.o
+cd ..
+rmdir .temp

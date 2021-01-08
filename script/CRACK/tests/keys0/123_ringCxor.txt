@@ -1,6 +1,4 @@
-[1,2,3,4,5,6,7,8,9,]
-[1,2,3,4,5,]
-[0,2,3,4,5,]
 
+./tests/crypted_crack/123_ringCxor.txt
 
-Everything is under control my friend
+Usage : ../../dh_crack [-h] [-i filename] [-k key_length] [-m c1|all] [-d dictionnary]

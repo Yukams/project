@@ -3,7 +3,7 @@
 #include <math.h>
 #include <assert.h>
 #include <time.h>
-#include "dh_prime.h"
+#include "../Headers/dh_prime.h"
 
 /// \file dh_prime.c
 /// \author Vincent Dugat
