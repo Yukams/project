@@ -3,6 +3,11 @@
 #include <string.h>
 #include "../Headers/cbc-uncrypt.h"
 
+/// \file cbc-uncrypt.c
+/// \author Valentin Tahon
+/// \date Janvier 2021
+/// \brief Effectue un décryptage d'un fichier grâce à la méthode de cryptage CBC
+
 void cbc_uncrypt(char* file_name, char* file_to_write, char* vector, char* key) {
     FILE* fromFile = fopen(file_name, "r");
     FILE* toFile = fopen(file_to_write, "w");

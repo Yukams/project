@@ -3,20 +3,28 @@
 #include <ctype.h>
 #include "../Headers/crack_c1.h"
 
+/// \file crack_c1.c
+/// \author Valentin Tahon
+/// \date Janvier 2021
+/// \brief Lance une recherche de clefs de chiffrement XOR composée uniquement de chiffres
+
 // Return file size
 int getFileSize(FILE* file) {
+    /// \brief Calcule la taille du fichier en nombre de caractères
+    /// \return size+1 qui correspond à la taille réelle
     fseek(file, 0L, SEEK_END);
     int size = ftell(file);
     fseek(file, 0L, SEEK_SET);
     return size+1;
 }
 
-
 void crack_c1(char* file_name, int key_length) {
+    /// \brief Affiche à l'écran l'ensemble des chiffres de la clef qui correspondent à un dechiffrage ASCII
+    /// Cette fonction n'affiche pas les combinaisons de clefs en tant que tel, ni les clefs les plus probables
     //ASCII values between 0 and 127
     FILE* fromFile = fopen(file_name, "r");
     
-    int key[key_length][10];
+    int keys[key_length][10];
     int crack;
     int message_size = getFileSize(fromFile);
     char message[message_size];
@@ -35,7 +43,9 @@ void crack_c1(char* file_name, int key_length) {
     int i;
     for(int k=0; k < key_length; k++) {
         z = 0;
+        printf("[");
         for(char value = 48; value < 58; value++) {
+            if(k == 0 && value == 48) {value++;}
             isTrue = 0;
             i = 0;
             while(k+(key_length*i) < message_size) {
@@ -46,11 +56,15 @@ void crack_c1(char* file_name, int key_length) {
                 i++;
             }
             if(isTrue == 0) {
-                key[k][z]=value;
+                keys[k][z]=value;
                 z++;
-                printf("%c ", value);
+                printf("%c,", value);
+            }
+            if(value == 57) {
+                printf("]");
             }
         }
         printf("\n");
     }
+    printf("\n\nEverything is under control my friend\n");
 }

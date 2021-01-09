@@ -7,7 +7,14 @@
 #include "../Headers/cbc-uncrypt.h"
 #include "../Headers/xor.h"
 
+/// \file dh_crypt.c
+/// \author Valentin Tahon
+/// \date Janvier 2021
+/// \brief Lance un chiffrement d'un fichier d'entrée et écris le résultat en fonction de la méthode de chiffrement choisie dans un fichier de sortie
+
 int main(int argc, char *argv[]) {
+    /// \brief Programme principal, traite les arguments fournis lors de l'appel du programme
+    /// Accepte les options -i (fichier en entrée), -o (fichier en sortie), -k (clef de chiffrement), -m (mode de chiffrement), -h (affiche l'aide)
     int opt;
     
     int i=0;

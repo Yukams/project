@@ -5,7 +5,14 @@
 #include <assert.h>
 #include "../Headers/crack_c1.h"
 
+/// \file dh_crack.c
+/// \author Valentin Tahon
+/// \date Janvier 2021
+/// \brief Lance une recherche de clefs de chiffrement XOR composée uniquement de chiffres, fourni un résultat exhaustif mais non définitif. Ne permet pas d'obtenir LA clef de déchiffrement.
+
 int main(int argc, char *argv[]) {
+    /// \brief Programme principal, traite les arguments fournis lors de l'appel du programme
+    /// Accepte les options -i (fichier en entrée), -k (taille de la clef de chiffrement), -m (mode de chiffrement), -h (affiche l'aide)
     int opt;
     
     int i=0;
@@ -20,7 +27,7 @@ int main(int argc, char *argv[]) {
     char* input_file = NULL;
     int key_length;
     char* mode = NULL;
-    while((opt = getopt(argc, argv, "i:d:k:m:")) != -1)
+    while((opt = getopt(argc, argv, "i:d:k:m:l:")) != -1)
         {
             switch(opt)
             {
@@ -48,6 +55,8 @@ int main(int argc, char *argv[]) {
                     }
                     fclose(fromFile);
                     break;
+                case 'l':
+                    break;
                 case 'd':
                     printf("\nDictionnaire non disponible, pas de traitement de C2 et C3\n");
                     exit(255);
@@ -60,7 +69,7 @@ int main(int argc, char *argv[]) {
                     exit(255);
             }
         }
-    
+
     if(mode != NULL && strcmp(mode, "c1") == 0) {
         crack_c1(input_file, key_length);
     }

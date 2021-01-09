@@ -18,7 +18,7 @@ long random_long(long min,long max){
 }
 
 long puissance_mod_n (long a, long e, long n) {
-  /// /brief puissance modulaire, calcule a^e mod n
+  /// \brief puissance modulaire, calcule a^e mod n
   /// a*a peut dépasser la capacité d'un long
   /// https://www.labri.fr/perso/betrema/deug/poly/exp-rapide.html
   /// vu au S1 en Python
@@ -136,14 +136,14 @@ long xchange_shared_key(long generateur, long premier){
     
     long A = puissance_mod_n(generateur, a, premier);
     printf("\n%s[RESEAU]%s Alice communique a Bob \"A\" : %ld\n", GRN, WHITE, A);
-    printf("%sBob connait \"b = %ld\" et \"A\" = %ld%s\n", BLUE, A, b, WHITE);
+    printf("%sBob connait \"b\" = %ld et \"A\" = %ld%s\n", BLUE, b, A, WHITE);
     printf("%sL'espion Eve connait A = %ld%s\n", MAG, A, WHITE);
     
     long A_reçu = puissance_mod_n(A, b, premier);
     printf("\n%s[LOCAL]%s Bob reçoit \"A\" et le traite pour obtenir %sla clef : %ld%s\n",GRN, WHITE, RED, A_reçu, WHITE);
     
     long B = puissance_mod_n(generateur, b, premier);
-    printf("\n%s[RESEAU]%s Bob communique a Alice \"A\" : %ld\n", GRN, WHITE, A);
+    printf("\n%s[RESEAU]%s Bob communique a Alice \"B\" : %ld\n", GRN, WHITE, B);
     printf("%sAlice connait \"a\" = %ld et \"B\" = %ld\n", BLUE, a, B);
     printf("%sL'espion Eve connait A = %ld et B = %ld%s\n", MAG, A, B, WHITE);
     

@@ -5,10 +5,17 @@
 #include <assert.h>
 #include "../Headers/dh_prime.h"
 
+/// \file dh_genkey.c
+/// \author Valentin Tahon
+/// \date Janvier 2021
+/// \brief Lance un scénario de génération de clef de chiffrement commune entre Alice et Bob
+///et montre qui connait quoi, quand et où se produisent les échanges (local, réseau).
+
 long generate_shared_key_dh(long min,long max, char* file_name){
-  /// \brief calcule un nombre premier p de Sophie Germain et un générateur du groupe p/Zp.
-  /// appelle le simulateur d'échange de clef partagée.
-  /// \returns la clef partagée
+    /// \brief calcule un nombre premier p de Sophie Germain et un générateur du groupe p/Zp.
+    /// appelle le simulateur d'échange de clef partagée.
+    /// Ecris les informations liées au générateur et au nombre premier dans le fichier <file_name>
+    /// \returns la clef partagée
     FILE* toFile = fopen(file_name, "w");
     if (toFile == NULL) {
           perror("Error while opening the file.\n");
@@ -28,6 +35,8 @@ long generate_shared_key_dh(long min,long max, char* file_name){
 }
 
 int main(int argc, char *argv[]) {
+    /// \brief programme principal, traite les arguments fournis lors de l'appel du programme
+    /// Accepte les options -o (fichier en sortie), -h (affiche l'aide)
     int opt;
     
     int i=0;
@@ -44,7 +53,7 @@ int main(int argc, char *argv[]) {
            switch(opt)
            {
                case 'o':
-                   generate_shared_key_dh(MIN_PRIME, random_long(MIN_PRIME, MAX_PRIME), optarg);
+                   generate_shared_key_dh(0, random_long(MIN_PRIME, MAX_PRIME), optarg);
                    return 0;
                case '?':
                    printf("Wrong option.\nUsage : dh_genkey [-h] [-o file_name]\n");
@@ -52,7 +61,7 @@ int main(int argc, char *argv[]) {
            }
        }
     
-    long key = generate_shared_key(0, random_long(10, 1000));
+    long key = generate_shared_key(0, random_long(MIN_PRIME, MAX_PRIME));
     printf("\n%sLa clé%s commune trouvée %sest : %ld%s\n", RED, WHITE, RED, key, WHITE);
     return 0;
 }

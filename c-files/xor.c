@@ -3,8 +3,14 @@
 #include <string.h>
 #include "../Headers/xor.h"
 
+/// \file xor.c
+/// \author Valentin Tahon
+/// \date Janvier 2021
+/// \brief Effectue un cryptage ou un décryptage d'un fichier grâce à la méthode de cryptage XOR
+
 // Encrypt the message contained in <file_name> with the <key> and writes it in <file_to_write>
 void xor(char* file_name, char* file_to_write, char* key) {
+    /// \brief Effectue le cryptage xor en prenant chaque caractère du fichier d'entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie
     FILE* fromFile = fopen(file_name, "r");
     FILE* toFile = fopen(file_to_write, "w");
     if (fromFile == NULL || toFile == NULL) {
@@ -30,6 +36,8 @@ void xor(char* file_name, char* file_to_write, char* key) {
 
 // Return file size
 int getFileSize(FILE* file) {
+    /// \brief Calcule la taille du fichier en nombre de caractères
+    /// \return size+1 qui correspond à la taille réelle
     fseek(file, 0L, SEEK_END);
     int size = ftell(file);
     fseek(file, 0L, SEEK_SET);
@@ -40,6 +48,7 @@ int getFileSize(FILE* file) {
 // Returns "true" if files are equals, "false" otherwise
 // B = Before, A = After
 int test_FilesAreNotEquals(char* filename_B, char* filename_A) {
+    /// \brief Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères
     // Tests if files content is identical
     FILE* file_B = fopen(filename_B, "r");
     FILE* file_A = fopen(filename_A, "r");
