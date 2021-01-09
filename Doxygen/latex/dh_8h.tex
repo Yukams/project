@@ -1,0 +1,92 @@
+\hypertarget{dh_8h}{}\doxysection{Référence du fichier dh.\+h}
+\label{dh_8h}\index{dh.h@{dh.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dh_8h_af365367382b6941e8a0491ad4d002232}{MAX\+\_\+\+FACTEURS}}~10
+\item 
+\#define \mbox{\hyperlink{dh_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}~16
+\item 
+\#define \mbox{\hyperlink{dh_8h_aa464414e7d70568ff0949f9444450b6c}{LONGMAX}}~1000
+\item 
+\#define \mbox{\hyperlink{dh_8h_a8fe83ac76edc595f6b98cd4a4127aed5}{ERROR}}~-\/1
+\item 
+\#define \mbox{\hyperlink{dh_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}~-\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{dh_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}
+\item 
+typedef \mbox{\hyperlink{dh_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} \mbox{\hyperlink{dh_8h_ad34161b8a69143f03ab1bac2dbbfbd81}{block\+\_\+t}}\mbox{[}\mbox{\hyperlink{dh_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+FILE $\ast$ \mbox{\hyperlink{dh_8h_ac16dab5cefce6fed135c20d1bae372a5}{logfp}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{dh_8h_ad51ded0bbd705f02f73fc60c0b721ced}\label{dh_8h_ad51ded0bbd705f02f73fc60c0b721ced}} 
+\index{dh.h@{dh.h}!BLOCK\_SIZE@{BLOCK\_SIZE}}
+\index{BLOCK\_SIZE@{BLOCK\_SIZE}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_SIZE}{BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define BLOCK\+\_\+\+SIZE~16}
+
+\mbox{\Hypertarget{dh_8h_a29fd18bed01c4d836c7ebfe73a125c3f}\label{dh_8h_a29fd18bed01c4d836c7ebfe73a125c3f}} 
+\index{dh.h@{dh.h}!END@{END}}
+\index{END@{END}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{END}{END}}
+{\footnotesize\ttfamily \#define END~-\/1}
+
+\mbox{\Hypertarget{dh_8h_a8fe83ac76edc595f6b98cd4a4127aed5}\label{dh_8h_a8fe83ac76edc595f6b98cd4a4127aed5}} 
+\index{dh.h@{dh.h}!ERROR@{ERROR}}
+\index{ERROR@{ERROR}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{ERROR}{ERROR}}
+{\footnotesize\ttfamily \#define ERROR~-\/1}
+
+\mbox{\Hypertarget{dh_8h_aa464414e7d70568ff0949f9444450b6c}\label{dh_8h_aa464414e7d70568ff0949f9444450b6c}} 
+\index{dh.h@{dh.h}!LONGMAX@{LONGMAX}}
+\index{LONGMAX@{LONGMAX}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{LONGMAX}{LONGMAX}}
+{\footnotesize\ttfamily \#define LONGMAX~1000}
+
+\mbox{\Hypertarget{dh_8h_af365367382b6941e8a0491ad4d002232}\label{dh_8h_af365367382b6941e8a0491ad4d002232}} 
+\index{dh.h@{dh.h}!MAX\_FACTEURS@{MAX\_FACTEURS}}
+\index{MAX\_FACTEURS@{MAX\_FACTEURS}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_FACTEURS}{MAX\_FACTEURS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+FACTEURS~10}
+
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{dh_8h_ad34161b8a69143f03ab1bac2dbbfbd81}\label{dh_8h_ad34161b8a69143f03ab1bac2dbbfbd81}} 
+\index{dh.h@{dh.h}!block\_t@{block\_t}}
+\index{block\_t@{block\_t}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{block\_t}{block\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{dh_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}} block\+\_\+t\mbox{[}\mbox{\hyperlink{dh_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}\mbox{]}}
+
+\mbox{\Hypertarget{dh_8h_a0c8186d9b9b7880309c27230bbb5e69d}\label{dh_8h_a0c8186d9b9b7880309c27230bbb5e69d}} 
+\index{dh.h@{dh.h}!byte@{byte}}
+\index{byte@{byte}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{byte}{byte}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{dh_8h_a0c8186d9b9b7880309c27230bbb5e69d}{byte}}}
+
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{dh_8h_ac16dab5cefce6fed135c20d1bae372a5}\label{dh_8h_ac16dab5cefce6fed135c20d1bae372a5}} 
+\index{dh.h@{dh.h}!logfp@{logfp}}
+\index{logfp@{logfp}!dh.h@{dh.h}}
+\doxysubsubsection{\texorpdfstring{logfp}{logfp}}
+{\footnotesize\ttfamily FILE$\ast$ logfp\hspace{0.3cm}{\ttfamily [extern]}}
+

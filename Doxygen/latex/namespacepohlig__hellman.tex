@@ -1,0 +1,126 @@
+\hypertarget{namespacepohlig__hellman}{}\doxysection{Référence de l\textquotesingle{}espace de nommage pohlig\+\_\+hellman}
+\label{namespacepohlig__hellman}\index{pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_aa52d4558c496a7a8bc91f60e02897fa3}{Prime\+Factorization}} (\mbox{\hyperlink{namespacepohlig__hellman_ac483f6ce851c9ecd9fb835ff7551737c}{p}})
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_ac7e5539416fa7113129fb61f8a896ba1}{Count\+Occurences}} (prime\+Factors)
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_a0af4650c363a07b39f564c3bfcfb3f7b}{Extended\+GCD}} (a, b)
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_af0280b3754b286a32f74057cc81aef14}{Modular\+Inverse}} (b, n)
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_a5f52f1bf4bb695ffce8828028628e15f}{Chinese\+Remainder}} (pairs)
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_adb4d1840ebeb2ade80c22e5c4081fa45}{Shanks\+Algorithm}} (alpha, beta, n)
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_ac65cdeff3d8547e692b37c2f061f912b}{Congruence\+Pair}} (\mbox{\hyperlink{namespacepohlig__hellman_a73c18c59a39b18382081ec00bb456d43}{g}}, \mbox{\hyperlink{namespacepohlig__hellman_a5e36941b3d856737e81516acd45edc50}{h}}, \mbox{\hyperlink{namespacepohlig__hellman_ac483f6ce851c9ecd9fb835ff7551737c}{p}}, q, e, e1, e2)
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_a18f9724bdee366b4569fc9ca0656e389}{Print\+Formated}} (arg1, arg2, arg3, arg4, arg5)
+\item 
+def \mbox{\hyperlink{namespacepohlig__hellman_ae69b76fff215224ca17e55b048c912db}{Pohling\+Hellman}} (\mbox{\hyperlink{namespacepohlig__hellman_a73c18c59a39b18382081ec00bb456d43}{g}}, \mbox{\hyperlink{namespacepohlig__hellman_a5e36941b3d856737e81516acd45edc50}{h}}, \mbox{\hyperlink{namespacepohlig__hellman_ac483f6ce851c9ecd9fb835ff7551737c}{p}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacepohlig__hellman_ab81da2e407852b610dbfef817eed3823}{err}} = False
+\item 
+\mbox{\hyperlink{namespacepohlig__hellman_a5e36941b3d856737e81516acd45edc50}{h}} = int(raw\+\_\+input(\char`\"{}h\+: \char`\"{}))
+\item 
+\mbox{\hyperlink{namespacepohlig__hellman_a73c18c59a39b18382081ec00bb456d43}{g}} = int(raw\+\_\+input(\char`\"{}g\+: \char`\"{}))
+\item 
+\mbox{\hyperlink{namespacepohlig__hellman_ac483f6ce851c9ecd9fb835ff7551737c}{p}} = int(raw\+\_\+input(\char`\"{}p\+: \char`\"{}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{namespacepohlig__hellman_a5f52f1bf4bb695ffce8828028628e15f}\label{namespacepohlig__hellman_a5f52f1bf4bb695ffce8828028628e15f}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!ChineseRemainder@{ChineseRemainder}}
+\index{ChineseRemainder@{ChineseRemainder}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{ChineseRemainder()}{ChineseRemainder()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Chinese\+Remainder (\begin{DoxyParamCaption}\item[{}]{pairs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Chinese remainder theorem for solving a system of congruences\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepohlig__hellman_ac65cdeff3d8547e692b37c2f061f912b}\label{namespacepohlig__hellman_ac65cdeff3d8547e692b37c2f061f912b}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!CongruencePair@{CongruencePair}}
+\index{CongruencePair@{CongruencePair}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{CongruencePair()}{CongruencePair()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Congruence\+Pair (\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{h,  }\item[{}]{p,  }\item[{}]{q,  }\item[{}]{e,  }\item[{}]{e1,  }\item[{}]{e2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return pair (x, q ** e) which represents one congruence\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepohlig__hellman_ac7e5539416fa7113129fb61f8a896ba1}\label{namespacepohlig__hellman_ac7e5539416fa7113129fb61f8a896ba1}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!CountOccurences@{CountOccurences}}
+\index{CountOccurences@{CountOccurences}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{CountOccurences()}{CountOccurences()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Count\+Occurences (\begin{DoxyParamCaption}\item[{}]{prime\+Factors }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Count occurances of each prime factor\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepohlig__hellman_a0af4650c363a07b39f564c3bfcfb3f7b}\label{namespacepohlig__hellman_a0af4650c363a07b39f564c3bfcfb3f7b}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!ExtendedGCD@{ExtendedGCD}}
+\index{ExtendedGCD@{ExtendedGCD}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{ExtendedGCD()}{ExtendedGCD()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Extended\+GCD (\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extended Euclidian algorithm for finding GCD\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepohlig__hellman_af0280b3754b286a32f74057cc81aef14}\label{namespacepohlig__hellman_af0280b3754b286a32f74057cc81aef14}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!ModularInverse@{ModularInverse}}
+\index{ModularInverse@{ModularInverse}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{ModularInverse()}{ModularInverse()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Modular\+Inverse (\begin{DoxyParamCaption}\item[{}]{b,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return x s.t. x ≡ a^(-1) (mod n)\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepohlig__hellman_ae69b76fff215224ca17e55b048c912db}\label{namespacepohlig__hellman_ae69b76fff215224ca17e55b048c912db}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!PohlingHellman@{PohlingHellman}}
+\index{PohlingHellman@{PohlingHellman}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{PohlingHellman()}{PohlingHellman()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Pohling\+Hellman (\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{h,  }\item[{}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Main function of Pohling-Hellman's algorithm\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepohlig__hellman_aa52d4558c496a7a8bc91f60e02897fa3}\label{namespacepohlig__hellman_aa52d4558c496a7a8bc91f60e02897fa3}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!PrimeFactorization@{PrimeFactorization}}
+\index{PrimeFactorization@{PrimeFactorization}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{PrimeFactorization()}{PrimeFactorization()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Prime\+Factorization (\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find all prime factors of the number p\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepohlig__hellman_a18f9724bdee366b4569fc9ca0656e389}\label{namespacepohlig__hellman_a18f9724bdee366b4569fc9ca0656e389}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!PrintFormated@{PrintFormated}}
+\index{PrintFormated@{PrintFormated}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{PrintFormated()}{PrintFormated()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Print\+Formated (\begin{DoxyParamCaption}\item[{}]{arg1,  }\item[{}]{arg2,  }\item[{}]{arg3,  }\item[{}]{arg4,  }\item[{}]{arg5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepohlig__hellman_adb4d1840ebeb2ade80c22e5c4081fa45}\label{namespacepohlig__hellman_adb4d1840ebeb2ade80c22e5c4081fa45}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!ShanksAlgorithm@{ShanksAlgorithm}}
+\index{ShanksAlgorithm@{ShanksAlgorithm}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{ShanksAlgorithm()}{ShanksAlgorithm()}}
+{\footnotesize\ttfamily def pohlig\+\_\+hellman.\+Shanks\+Algorithm (\begin{DoxyParamCaption}\item[{}]{alpha,  }\item[{}]{beta,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return x s.t. beta ≡ alpha^(x) (mod n)\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{namespacepohlig__hellman_ab81da2e407852b610dbfef817eed3823}\label{namespacepohlig__hellman_ab81da2e407852b610dbfef817eed3823}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!err@{err}}
+\index{err@{err}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily bool err = False}
+
+\mbox{\Hypertarget{namespacepohlig__hellman_a73c18c59a39b18382081ec00bb456d43}\label{namespacepohlig__hellman_a73c18c59a39b18382081ec00bb456d43}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!g@{g}}
+\index{g@{g}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily g = int(raw\+\_\+input(\char`\"{}g\+: \char`\"{}))}
+
+\mbox{\Hypertarget{namespacepohlig__hellman_a5e36941b3d856737e81516acd45edc50}\label{namespacepohlig__hellman_a5e36941b3d856737e81516acd45edc50}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!h@{h}}
+\index{h@{h}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily h = int(raw\+\_\+input(\char`\"{}h\+: \char`\"{}))}
+
+\mbox{\Hypertarget{namespacepohlig__hellman_ac483f6ce851c9ecd9fb835ff7551737c}\label{namespacepohlig__hellman_ac483f6ce851c9ecd9fb835ff7551737c}} 
+\index{pohlig\_hellman@{pohlig\_hellman}!p@{p}}
+\index{p@{p}!pohlig\_hellman@{pohlig\_hellman}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily p = int(raw\+\_\+input(\char`\"{}p\+: \char`\"{}))}
+
