@@ -1,4 +1,4 @@
-/// \file cbc-uncrypt.h
+/// \file cbc-crypt.h
 /// \author Valentin Tahon
 /// \date Janvier 2021
 /// \brief Header de cbc-crypt.c et de dh_crypt.c

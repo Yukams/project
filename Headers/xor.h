@@ -8,6 +8,7 @@
 /// \param[in] file_to_write : nom du fichier de destination
 /// \param[in] key : clef de chiffrement
 void xor(char* file_name, char* file_to_write, char* key);
+
 /// \brief Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères
 /// \param[in] filename_B : le fichier modifié
 /// \param[in] filename_A : le fichier d'origine

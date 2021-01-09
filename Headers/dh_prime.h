@@ -2,7 +2,6 @@
 /// \author Valentin Tahon
 /// \date Janvier 2021
 /// \brief Header de dh_prime.c et dh_genkey.c
-
 #define MAX_PRIME 4294967296/1000 // 2^32 = sqrt(2^64)
 #define MIN_PRIME 100
 #define BLUE "\x1B[34m"
