@@ -1,4 +1,7 @@
-
+/// \file dh_crack.h
+/// \author Valentin Tahon
+/// \date Janvier 2021
+/// \brief Inutilisé
 #ifndef CRACK_H
 #define CRACK_H
  

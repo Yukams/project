@@ -1,0 +1,69 @@
+\hypertarget{crack__c1_8c}{}\doxysection{Référence du fichier crack\+\_\+c1.\+c}
+\label{crack__c1_8c}\index{crack\_c1.c@{crack\_c1.c}}
+
+
+Lance une recherche de clefs de chiffrement XOR composée uniquement de chiffres.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Headers/crack\+\_\+c1.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{crack__c1_8c_aae285d6fbb1d42caa838669b08754f05}{get\+File\+Size}} (FILE $\ast$file)
+\item 
+void \mbox{\hyperlink{crack__c1_8c_aaa2193f237f0b7c13b8e7a0e68daf294}{crack\+\_\+c1}} (char $\ast$file\+\_\+name, int key\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Affiche à l\textquotesingle{}écran l\textquotesingle{}ensemble des chiffres de la clef qui correspondent à un dechiffrage ASCII Cette fonction n\textquotesingle{}affiche pas les combinaisons de clefs en tant que tel, ni les clefs les plus probables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Lance une recherche de clefs de chiffrement XOR composée uniquement de chiffres. 
+
+\begin{DoxyAuthor}{Auteur}
+Valentin Tahon 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janvier 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{crack__c1_8c_aaa2193f237f0b7c13b8e7a0e68daf294}\label{crack__c1_8c_aaa2193f237f0b7c13b8e7a0e68daf294}} 
+\index{crack\_c1.c@{crack\_c1.c}!crack\_c1@{crack\_c1}}
+\index{crack\_c1@{crack\_c1}!crack\_c1.c@{crack\_c1.c}}
+\doxysubsubsection{\texorpdfstring{crack\_c1()}{crack\_c1()}}
+{\footnotesize\ttfamily void crack\+\_\+c1 (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name,  }\item[{int}]{key\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Affiche à l\textquotesingle{}écran l\textquotesingle{}ensemble des chiffres de la clef qui correspondent à un dechiffrage ASCII Cette fonction n\textquotesingle{}affiche pas les combinaisons de clefs en tant que tel, ni les clefs les plus probables. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & \+: nom du fichier source \\
+\hline
+\mbox{\texttt{ in}}  & {\em key\+\_\+length} & longueur de la clef \\
+\hline
+\end{DoxyParams}
+Affiche à l\textquotesingle{}écran l\textquotesingle{}ensemble des chiffres de la clef qui correspondent à un dechiffrage ASCII Cette fonction n\textquotesingle{}affiche pas les combinaisons de clefs en tant que tel, ni les clefs les plus probables 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & \+: nom du fichier source \\
+\hline
+\mbox{\texttt{ in}}  & {\em key\+\_\+length} & longueur de la clef\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{crack__c1_8c_aae285d6fbb1d42caa838669b08754f05}\label{crack__c1_8c_aae285d6fbb1d42caa838669b08754f05}} 
+\index{crack\_c1.c@{crack\_c1.c}!getFileSize@{getFileSize}}
+\index{getFileSize@{getFileSize}!crack\_c1.c@{crack\_c1.c}}
+\doxysubsubsection{\texorpdfstring{getFileSize()}{getFileSize()}}
+{\footnotesize\ttfamily int get\+File\+Size (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
+
+Calcule la taille du fichier en nombre de caractères 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file} & \+: le fichier concerné \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+size+1 qui correspond à la taille réelle
+\end{DoxyReturn}

@@ -1,0 +1,78 @@
+\hypertarget{dh__crack_8h}{}\doxysection{Référence du fichier dh\+\_\+crack.\+h}
+\label{dh__crack_8h}\index{dh\_crack.h@{dh\_crack.h}}
+
+
+Header de \mbox{\hyperlink{crack__c1_8c}{crack\+\_\+c1.\+c}} et de \mbox{\hyperlink{dh__crack_8c}{dh\+\_\+crack.\+c}}.  
+
+
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}}
+\item 
+struct \mbox{\hyperlink{structt__words__lst}{t\+\_\+words\+\_\+lst}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a6951fbb2db89c774d8ef4ee94ac48707}\label{dh__crack_8h_a6951fbb2db89c774d8ef4ee94ac48707}} 
+\#define {\bfseries MAX\+\_\+\+SIZE\+\_\+\+KEY}~8  /$\ast$ 7 + \textquotesingle{}\textbackslash{}0\textquotesingle{} caractères max dans la clef $\ast$/
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a35c080d0ec88478fee307c4ce342fd2b}\label{dh__crack_8h_a35c080d0ec88478fee307c4ce342fd2b}} 
+\#define {\bfseries MAX\+\_\+\+VALID\+\_\+\+KEY\+\_\+\+CHARS}~10
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a3077ecca3770bdee50e6a17dfb55d002}\label{dh__crack_8h_a3077ecca3770bdee50e6a17dfb55d002}} 
+\#define {\bfseries MAX\+\_\+\+KEYS}~30000
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dh__crack_8h_aec7ca6c9369f12b5b1530d739917b9a6}\label{dh__crack_8h_aec7ca6c9369f12b5b1530d739917b9a6}} 
+void {\bfseries create\+\_\+tab\+\_\+keys} (\mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} $\ast$tab\+\_\+keys, int key\+\_\+size)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a7a5ca966ee51eb45e621cba4a23c4df8}\label{dh__crack_8h_a7a5ca966ee51eb45e621cba4a23c4df8}} 
+void {\bfseries init\+\_\+tab\+\_\+keys} (\mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} $\ast$tab\+\_\+keys)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a9c97ab9362c3be669a6efdacff02937f}\label{dh__crack_8h_a9c97ab9362c3be669a6efdacff02937f}} 
+void {\bfseries print\+\_\+key\+\_\+chars} (\mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} tab\+\_\+keys)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_aada8195a0121e5b5b9118fee6226a9c9}\label{dh__crack_8h_aada8195a0121e5b5b9118fee6226a9c9}} 
+void {\bfseries print\+\_\+tab\+\_\+keys} (\mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} tab\+\_\+keys)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a8c2dac067229859412673a0bba157389}\label{dh__crack_8h_a8c2dac067229859412673a0bba157389}} 
+void {\bfseries remove\+\_\+key\+\_\+char} (byte $\ast$tab, int char\+\_\+index)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_acbeb72b7bfe97a75e90c49ead3ce895c}\label{dh__crack_8h_acbeb72b7bfe97a75e90c49ead3ce895c}} 
+int {\bfseries crack\+\_\+c1} (char $\ast$file\+\_\+name\+\_\+in, \mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} tab\+\_\+keys, int key\+\_\+size)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a920813ab7f1bbea5d2cd00cd0a5aef14}\label{dh__crack_8h_a920813ab7f1bbea5d2cd00cd0a5aef14}} 
+int {\bfseries crack\+\_\+c2\+\_\+by\+\_\+key} (char $\ast$file\+\_\+name\+\_\+in, \mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} $\ast$tab\+\_\+keys, int key\+\_\+size, byte keys\mbox{[}MAX\+\_\+\+KEYS\mbox{]}\mbox{[}MAX\+\_\+\+SIZE\+\_\+\+KEY\mbox{]}, int keys\+\_\+sort\+\_\+scores\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a1ce8e0d7f931a076c5d6522fc6571e25}\label{dh__crack_8h_a1ce8e0d7f931a076c5d6522fc6571e25}} 
+int {\bfseries crack\+\_\+c2\+\_\+by\+\_\+char} (char $\ast$file\+\_\+name\+\_\+in, \mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} $\ast$tab\+\_\+keys, int key\+\_\+size, byte $\ast$best\+\_\+key)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a49429cb69377a986b7b1d6d55a5533ed}\label{dh__crack_8h_a49429cb69377a986b7b1d6d55a5533ed}} 
+int {\bfseries generate\+\_\+keys\+\_\+from\+\_\+char} (\mbox{\hyperlink{structt__tab__keys}{t\+\_\+tab\+\_\+keys}} $\ast$tab\+\_\+keys, int key\+\_\+size, byte keys\mbox{[}$\,$\mbox{]}\mbox{[}MAX\+\_\+\+SIZE\+\_\+\+KEY\mbox{]})
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a7c98820b54c42ba50bdaa55013cae519}\label{dh__crack_8h_a7c98820b54c42ba50bdaa55013cae519}} 
+void {\bfseries print\+\_\+keys} (byte keys\mbox{[}$\,$\mbox{]}\mbox{[}MAX\+\_\+\+SIZE\+\_\+\+KEY\mbox{]}, int size)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_adcf7d701a058ec73d253ac663e1472a6}\label{dh__crack_8h_adcf7d701a058ec73d253ac663e1472a6}} 
+void {\bfseries crack\+\_\+c3\+\_\+dict} (char $\ast$in\+Filename, char $\ast$dico\+\_\+name, int nb\+\_\+keys, byte keys\mbox{[}MAX\+\_\+\+KEYS\mbox{]}\mbox{[}MAX\+\_\+\+SIZE\+\_\+\+KEY\mbox{]}, int keys\+\_\+sort\+\_\+scores\mbox{[}$\,$\mbox{]}, int $\ast$best\+\_\+index)
+\item 
+\mbox{\Hypertarget{dh__crack_8h_a275ffcdbed9f3506746ea76099cafeb7}\label{dh__crack_8h_a275ffcdbed9f3506746ea76099cafeb7}} 
+int {\bfseries dicho\+Recur} (byte $\ast$$\ast$tab, int deb, int fin, byte $\ast$valeur)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Header de \mbox{\hyperlink{crack__c1_8c}{crack\+\_\+c1.\+c}} et de \mbox{\hyperlink{dh__crack_8c}{dh\+\_\+crack.\+c}}. 
+
+Inutilisé
+
+\begin{DoxyAuthor}{Auteur}
+Valentin Tahon 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janvier 2021 
+\end{DoxyDate}

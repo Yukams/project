@@ -15,6 +15,9 @@ long generate_shared_key_dh(long min,long max, char* file_name){
     /// \brief calcule un nombre premier p de Sophie Germain et un générateur du groupe p/Zp.
     /// appelle le simulateur d'échange de clef partagée.
     /// Ecris les informations liées au générateur et au nombre premier dans le fichier <file_name>
+    /// \param[in] min
+    /// \param[in] max
+    /// \param[in] file_name (nom du fichier pour l'écriture du générateur et du nombre premier)
     /// \returns la clef partagée
     FILE* toFile = fopen(file_name, "w");
     if (toFile == NULL) {
@@ -37,6 +40,7 @@ long generate_shared_key_dh(long min,long max, char* file_name){
 int main(int argc, char *argv[]) {
     /// \brief programme principal, traite les arguments fournis lors de l'appel du programme
     /// Accepte les options -o (fichier en sortie), -h (affiche l'aide)
+    /// \param[in] argc : nombre d'arguments de l'appel du programme, argv[] : arguments de l'appel du programme
     int opt;
     
     int i=0;

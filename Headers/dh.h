@@ -1,6 +1,7 @@
 /// \file vernam_header.h
 /// \author Vincent Dugat
 /// \date mai 2020
+/// \brief Inutilisé
 #ifndef DH_H
 #define DH_H
 

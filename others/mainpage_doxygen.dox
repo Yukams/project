@@ -1,0 +1,16 @@
+/*! \mainpage Valentin Tahon - S3 L2 Info Projet
+ *
+ * \section intro_sec Introduction
+ *
+ * <b>Ce doxygen a été créé pour le projet de Licence Informatique de deuxième année à l'Université Paul Sabatier de Toulouse.</b>
+ * <br>L'objectif de ce document est de fournir une aide pour comprendre et manipuler les fonctions du projet.
+ * <br>Je ne savais pas trop quoi mettre sur cette page principale... Mais elle était trop vide pour moi... Alors je la remplis un peu.
+ * <br>J'espère que vous n'allez pas vous arracher les cheveux en regardant mon code. :)
+ *
+ * \subsection github_sec GitHub
+ * Le projet a été sauvegardé aussi sur un repo sur GitHub https://github.com/Yukams/project/settings
+ * <br>C'était pas utile de le préciser mais... J'ai trouvé ça cool de l'utiliser, alors autant que ça se sache !
+ * <br>Et puis, elle est plus jolie avec du texte cette page...
+ * <br> J'aurais pu aussi parler de ce que j'ai aimé dans le projet, mais je garde ça pour l'oral.
+ *
+ */

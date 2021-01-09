@@ -1,0 +1,100 @@
+\hypertarget{xor_8c}{}\doxysection{Référence du fichier xor.\+c}
+\label{xor_8c}\index{xor.c@{xor.c}}
+
+
+Effectue un cryptage ou un décryptage d\textquotesingle{}un fichier grâce à la méthode de cryptage XOR.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Headers/xor.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{xor_8c_ab2fd325b3b87a8109bbdb6f604711ce0}{xor}} (char $\ast$file\+\_\+name, char $\ast$file\+\_\+to\+\_\+write, char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Effectue le cryptage xor en prenant chaque caractère du fichier d\textquotesingle{}entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{xor_8c_aae285d6fbb1d42caa838669b08754f05}{get\+File\+Size}} (FILE $\ast$file)
+\item 
+int \mbox{\hyperlink{xor_8c_a7901cfb954c076d8f67565b3157466cd}{test\+\_\+\+Files\+Are\+Not\+Equals}} (char $\ast$filename\+\_\+B, char $\ast$filename\+\_\+A)
+\begin{DoxyCompactList}\small\item\em Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Effectue un cryptage ou un décryptage d\textquotesingle{}un fichier grâce à la méthode de cryptage XOR. 
+
+\begin{DoxyAuthor}{Auteur}
+Valentin Tahon 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janvier 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{xor_8c_aae285d6fbb1d42caa838669b08754f05}\label{xor_8c_aae285d6fbb1d42caa838669b08754f05}} 
+\index{xor.c@{xor.c}!getFileSize@{getFileSize}}
+\index{getFileSize@{getFileSize}!xor.c@{xor.c}}
+\doxysubsubsection{\texorpdfstring{getFileSize()}{getFileSize()}}
+{\footnotesize\ttfamily int get\+File\+Size (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
+
+Calcule la taille du fichier en nombre de caractères 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file} & \+: le fichier concerné \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+size+1 qui correspond à la taille réelle
+\end{DoxyReturn}
+\mbox{\Hypertarget{xor_8c_a7901cfb954c076d8f67565b3157466cd}\label{xor_8c_a7901cfb954c076d8f67565b3157466cd}} 
+\index{xor.c@{xor.c}!test\_FilesAreNotEquals@{test\_FilesAreNotEquals}}
+\index{test\_FilesAreNotEquals@{test\_FilesAreNotEquals}!xor.c@{xor.c}}
+\doxysubsubsection{\texorpdfstring{test\_FilesAreNotEquals()}{test\_FilesAreNotEquals()}}
+{\footnotesize\ttfamily int test\+\_\+\+Files\+Are\+Not\+Equals (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename\+\_\+B,  }\item[{char $\ast$}]{filename\+\_\+A }\end{DoxyParamCaption})}
+
+
+
+Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em filename\+\_\+B} & \+: le fichier modifié \\
+\hline
+\mbox{\texttt{ in}}  & {\em filename\+\_\+A} & \+: le fichier d\textquotesingle{}origine \\
+\hline
+\end{DoxyParams}
+Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em filename\+\_\+B} & \+: le fichier modifié \\
+\hline
+\mbox{\texttt{ in}}  & {\em filename\+\_\+A} & \+: le fichier d\textquotesingle{}origine\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{xor_8c_ab2fd325b3b87a8109bbdb6f604711ce0}\label{xor_8c_ab2fd325b3b87a8109bbdb6f604711ce0}} 
+\index{xor.c@{xor.c}!xor@{xor}}
+\index{xor@{xor}!xor.c@{xor.c}}
+\doxysubsubsection{\texorpdfstring{xor()}{xor()}}
+{\footnotesize\ttfamily void xor (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name,  }\item[{char $\ast$}]{file\+\_\+to\+\_\+write,  }\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+Effectue le cryptage xor en prenant chaque caractère du fichier d\textquotesingle{}entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & \+: nom du fichier source \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+\_\+to\+\_\+write} & \+: nom du fichier de destination \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & \+: clef de chiffrement \\
+\hline
+\end{DoxyParams}
+Effectue le cryptage xor en prenant chaque caractère du fichier d\textquotesingle{}entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & \+: nom du fichier source \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+\_\+to\+\_\+write} & \+: nom du fichier de destination \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & \+: clef de chiffrement\\
+\hline
+\end{DoxyParams}

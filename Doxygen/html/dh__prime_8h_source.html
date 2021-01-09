@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet S3 L2 Info:  Fichier source de dh_prime.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projet S3 L2 Info
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5ad7f572bbca03234e8e621e192fc099.html">Library</a></li><li class="navelem"><a class="el" href="dir_ad2287be10ffbaedcb318a5bae37a26b.html">Mobile Documents</a></li><li class="navelem"><a class="el" href="dir_8ac624e68311bf9fbf834d5423e4f789.html">com~apple~CloudDocs</a></li><li class="navelem"><a class="el" href="dir_956ae0c9efd7f6cad113af9ff80a1ad5.html">pastSecrtaria</a></li><li class="navelem"><a class="el" href="dir_92b37d309084fcf01e8813a538e12097.html">Fac</a></li><li class="navelem"><a class="el" href="dir_74c1dc13e6e2ea924b679470c29ff21a.html">L2</a></li><li class="navelem"><a class="el" href="dir_cc7442cdf6cd469a0c21a8c42102a0cb.html">S3</a></li><li class="navelem"><a class="el" href="dir_61b93d207b631730658eba0cbf7a9b70.html">Projet</a></li><li class="navelem"><a class="el" href="dir_7cdbd1764245b05ffcecb5af3fa5a3e8.html">Projet</a></li><li class="navelem"><a class="el" href="dir_d6193a41c90ba3087dbaa1272929980d.html">Headers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dh_prime.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define MAX_PRIME 4294967296/1000 </span><span class="comment">// 2^32 = sqrt(2^64)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define MIN_PRIME 100</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define BLUE &quot;\x1B[34m&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define WHITE &quot;\x1B[37m&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define MAG &quot;\x1B[35m&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GRN &quot;\x1B[32m&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define RED &quot;\x1B[31m&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">long</span> <a class="code" href="dh__prime_8c.html#a3e7a48022f91e807829a2488d451dd9a">random_long</a>(<span class="keywordtype">long</span> min,<span class="keywordtype">long</span> max);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> <a class="code" href="dh__prime_8c.html#afc7e7e847ee702c67f816eac7d021579">rabin</a> (<span class="keywordtype">long</span> a, <span class="keywordtype">long</span> n) ;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">long</span> <a class="code" href="dh__prime_8c.html#aa4b5ea98d589c0df414bdb825606c6ff">puissance_mod_n</a> (<span class="keywordtype">long</span> a, <span class="keywordtype">long</span> e, <span class="keywordtype">long</span> n);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">long</span> <a class="code" href="dh__prime_8c.html#a52d24f65da0f678f4e6aef536f7eab08">seek_generator</a>(<span class="keywordtype">long</span> start,<span class="keywordtype">long</span> p);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">long</span> <a class="code" href="dh__prime_8c.html#a726751b1d8c955cd8a0af55adb9045e4">generate_shared_key</a>(<span class="keywordtype">long</span> min,<span class="keywordtype">long</span> max);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">long</span> <a class="code" href="dh__prime_8c.html#ad9404b73989752956868ec098414e630">genPrimeSophieGermain</a>(<span class="keywordtype">long</span> min,<span class="keywordtype">long</span> max,<span class="keywordtype">int</span> *cpt);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">long</span> <a class="code" href="dh__prime_8c.html#a6bbcd4f3b3ff639abcb6c67574ff0ca4">xchange_shared_key</a>(<span class="keywordtype">long</span> generateur, <span class="keywordtype">long</span> premier);</div>
+<div class="ttc" id="adh__prime_8c_html_a3e7a48022f91e807829a2488d451dd9a"><div class="ttname"><a href="dh__prime_8c.html#a3e7a48022f91e807829a2488d451dd9a">random_long</a></div><div class="ttdeci">long random_long(long min, long max)</div><div class="ttdoc">génère un uint aléatoire entre min et max</div><div class="ttdef"><b>Definition:</b> dh_prime.c:12</div></div>
+<div class="ttc" id="adh__prime_8c_html_a52d24f65da0f678f4e6aef536f7eab08"><div class="ttname"><a href="dh__prime_8c.html#a52d24f65da0f678f4e6aef536f7eab08">seek_generator</a></div><div class="ttdeci">long seek_generator(long start, long p)</div><div class="ttdoc">recherche d'un générateur du groupe (corps) cyclique Z/pZ avec p premier</div><div class="ttdef"><b>Definition:</b> dh_prime.c:117</div></div>
+<div class="ttc" id="adh__prime_8c_html_a6bbcd4f3b3ff639abcb6c67574ff0ca4"><div class="ttname"><a href="dh__prime_8c.html#a6bbcd4f3b3ff639abcb6c67574ff0ca4">xchange_shared_key</a></div><div class="ttdeci">long xchange_shared_key(long generateur, long premier)</div><div class="ttdoc">similateur d'échange de clefs de Diffie-Hellman par réseau</div><div class="ttdef"><b>Definition:</b> dh_prime.c:134</div></div>
+<div class="ttc" id="adh__prime_8c_html_a726751b1d8c955cd8a0af55adb9045e4"><div class="ttname"><a href="dh__prime_8c.html#a726751b1d8c955cd8a0af55adb9045e4">generate_shared_key</a></div><div class="ttdeci">long generate_shared_key(long min, long max)</div><div class="ttdoc">calcule un nombre premier p de Sophie Germain et un générateur du groupe p/Zp. appelle le simulateur ...</div><div class="ttdef"><b>Definition:</b> dh_prime.c:168</div></div>
+<div class="ttc" id="adh__prime_8c_html_aa4b5ea98d589c0df414bdb825606c6ff"><div class="ttname"><a href="dh__prime_8c.html#aa4b5ea98d589c0df414bdb825606c6ff">puissance_mod_n</a></div><div class="ttdeci">long puissance_mod_n(long a, long e, long n)</div><div class="ttdoc">puissance modulaire, calcule a^e mod n a*a peut dépasser la capacité d'un long https://www....</div><div class="ttdef"><b>Definition:</b> dh_prime.c:20</div></div>
+<div class="ttc" id="adh__prime_8c_html_ad9404b73989752956868ec098414e630"><div class="ttname"><a href="dh__prime_8c.html#ad9404b73989752956868ec098414e630">genPrimeSophieGermain</a></div><div class="ttdeci">long genPrimeSophieGermain(long min, long max, int *cpt)</div><div class="ttdoc">fournit un nombre premier de Sophie Germain vérifié avec le test de rabin</div><div class="ttdef"><b>Definition:</b> dh_prime.c:98</div></div>
+<div class="ttc" id="adh__prime_8c_html_afc7e7e847ee702c67f816eac7d021579"><div class="ttname"><a href="dh__prime_8c.html#afc7e7e847ee702c67f816eac7d021579">rabin</a></div><div class="ttdeci">int rabin(long a, long n)</div><div class="ttdoc">test de Rabin sur la pimarité d'un entier</div><div class="ttdef"><b>Definition:</b> dh_prime.c:52</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

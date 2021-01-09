@@ -1,0 +1,332 @@
+\hypertarget{dh__prime_8c}{}\doxysection{Référence du fichier dh\+\_\+prime.\+c}
+\label{dh__prime_8c}\index{dh\_prime.c@{dh\_prime.c}}
+
+
+Calculs sur les nombres premiers, génération, tests, etc.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Headers/dh\+\_\+prime.\+h\char`\"{}}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{dh__prime_8c_a3e7a48022f91e807829a2488d451dd9a}{random\+\_\+long}} (long min, long max)
+\begin{DoxyCompactList}\small\item\em génère un uint aléatoire entre min et max \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{dh__prime_8c_aa4b5ea98d589c0df414bdb825606c6ff}{puissance\+\_\+mod\+\_\+n}} (long a, long e, long n)
+\begin{DoxyCompactList}\small\item\em puissance modulaire, calcule a$^\wedge$e mod n a$\ast$a peut dépasser la capacité d\textquotesingle{}un long \href{https://www.labri.fr/perso/betrema/deug/poly/exp-rapide.html}{\texttt{ https\+://www.\+labri.\+fr/perso/betrema/deug/poly/exp-\/rapide.\+html}} vu au S1 en Python \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{dh__prime_8c_a9fb916b1625f5ad3948632775fc41810}{test\+\_\+prime}} (long n)
+\item 
+int \mbox{\hyperlink{dh__prime_8c_afc7e7e847ee702c67f816eac7d021579}{rabin}} (long a, long n)
+\begin{DoxyCompactList}\small\item\em test de Rabin sur la pimarité d\textquotesingle{}un entier \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{dh__prime_8c_acbd9ece0d640ca850b782a741b76057e}{genere\+Premier\+Rabin}} (long min, long max, int $\ast$cpt)
+\item 
+long \mbox{\hyperlink{dh__prime_8c_ad9404b73989752956868ec098414e630}{gen\+Prime\+Sophie\+Germain}} (long min, long max, int $\ast$cpt)
+\begin{DoxyCompactList}\small\item\em fournit un nombre premier de Sophie Germain vérifié avec le test de rabin \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{dh__prime_8c_a52d24f65da0f678f4e6aef536f7eab08}{seek\+\_\+generator}} (long start, long p)
+\begin{DoxyCompactList}\small\item\em recherche d\textquotesingle{}un générateur du groupe (corps) cyclique Z/pZ avec p premier \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{dh__prime_8c_a6bbcd4f3b3ff639abcb6c67574ff0ca4}{xchange\+\_\+shared\+\_\+key}} (long generateur, long premier)
+\begin{DoxyCompactList}\small\item\em similateur d\textquotesingle{}échange de clefs de Diffie-\/\+Hellman par réseau \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{dh__prime_8c_a726751b1d8c955cd8a0af55adb9045e4}{generate\+\_\+shared\+\_\+key}} (long min, long max)
+\begin{DoxyCompactList}\small\item\em calcule un nombre premier p de Sophie Germain et un générateur du groupe p/\+Zp. appelle le simulateur d\textquotesingle{}échange de clef partagée. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{dh__prime_8c_a35a70ed02af6c96de80403e59ea9fd14}{int\+\_\+pow}} (long a, long e)
+\item 
+int \mbox{\hyperlink{dh__prime_8c_af52f9865b6bb877af4608e29d4f42e05}{nb\+\_\+digit\+\_\+base10}} (long n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Calculs sur les nombres premiers, génération, tests, etc. 
+
+\begin{DoxyAuthor}{Auteur}
+Vincent Dugat 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+mai 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{dh__prime_8c_a726751b1d8c955cd8a0af55adb9045e4}\label{dh__prime_8c_a726751b1d8c955cd8a0af55adb9045e4}} 
+\index{dh\_prime.c@{dh\_prime.c}!generate\_shared\_key@{generate\_shared\_key}}
+\index{generate\_shared\_key@{generate\_shared\_key}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{generate\_shared\_key()}{generate\_shared\_key()}}
+{\footnotesize\ttfamily long generate\+\_\+shared\+\_\+key (\begin{DoxyParamCaption}\item[{long}]{min,  }\item[{long}]{max }\end{DoxyParamCaption})}
+
+
+
+calcule un nombre premier p de Sophie Germain et un générateur du groupe p/\+Zp. appelle le simulateur d\textquotesingle{}échange de clef partagée. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em min} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la clef partagée 
+\end{DoxyReturn}
+calcule un nombre premier p de Sophie Germain et un générateur du groupe p/\+Zp. appelle le simulateur d\textquotesingle{}échange de clef partagée. 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em min} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la clef partagée
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_acbd9ece0d640ca850b782a741b76057e}\label{dh__prime_8c_acbd9ece0d640ca850b782a741b76057e}} 
+\index{dh\_prime.c@{dh\_prime.c}!generePremierRabin@{generePremierRabin}}
+\index{generePremierRabin@{generePremierRabin}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{generePremierRabin()}{generePremierRabin()}}
+{\footnotesize\ttfamily long genere\+Premier\+Rabin (\begin{DoxyParamCaption}\item[{long}]{min,  }\item[{long}]{max,  }\item[{int $\ast$}]{cpt }\end{DoxyParamCaption})}
+
+fournit un nombre premier entre min et max. La primarité est vérifiée avec le test de rabin 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em min} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em cpt} & \+: le nombre d\textquotesingle{}essais pour trouver le nombre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un nombre premier p min≤p≤max
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_ad9404b73989752956868ec098414e630}\label{dh__prime_8c_ad9404b73989752956868ec098414e630}} 
+\index{dh\_prime.c@{dh\_prime.c}!genPrimeSophieGermain@{genPrimeSophieGermain}}
+\index{genPrimeSophieGermain@{genPrimeSophieGermain}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{genPrimeSophieGermain()}{genPrimeSophieGermain()}}
+{\footnotesize\ttfamily long gen\+Prime\+Sophie\+Germain (\begin{DoxyParamCaption}\item[{long}]{min,  }\item[{long}]{max,  }\item[{int $\ast$}]{cpt }\end{DoxyParamCaption})}
+
+
+
+fournit un nombre premier de Sophie Germain vérifié avec le test de rabin 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em min} & et max \\
+\hline
+\mbox{\texttt{ out}}  & {\em cpt} & \+: le nombre d\textquotesingle{}essais pour trouver le nombre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un nombre premier p min≤p≤max \&\& p = 2$\ast$q+1 avec q premier 
+\end{DoxyReturn}
+fournit un nombre premier de Sophie Germain vérifié avec le test de rabin 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em min} & et max \\
+\hline
+\mbox{\texttt{ out}}  & {\em cpt} & \+: le nombre d\textquotesingle{}essais pour trouver le nombre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un nombre premier p min≤p≤max \&\& p = 2$\ast$q+1 avec q premier
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_a35a70ed02af6c96de80403e59ea9fd14}\label{dh__prime_8c_a35a70ed02af6c96de80403e59ea9fd14}} 
+\index{dh\_prime.c@{dh\_prime.c}!int\_pow@{int\_pow}}
+\index{int\_pow@{int\_pow}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{int\_pow()}{int\_pow()}}
+{\footnotesize\ttfamily long int\+\_\+pow (\begin{DoxyParamCaption}\item[{long}]{a,  }\item[{long}]{e }\end{DoxyParamCaption})}
+
+puissance russe 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em } & a l\textquotesingle{}entier \\
+\hline
+\mbox{\texttt{ in}}  & {\em e} & l\textquotesingle{}exposant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\+: a$^\wedge$e
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_af52f9865b6bb877af4608e29d4f42e05}\label{dh__prime_8c_af52f9865b6bb877af4608e29d4f42e05}} 
+\index{dh\_prime.c@{dh\_prime.c}!nb\_digit\_base10@{nb\_digit\_base10}}
+\index{nb\_digit\_base10@{nb\_digit\_base10}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{nb\_digit\_base10()}{nb\_digit\_base10()}}
+{\footnotesize\ttfamily int nb\+\_\+digit\+\_\+base10 (\begin{DoxyParamCaption}\item[{long}]{n }\end{DoxyParamCaption})}
+
+compte le nombre de chiffres d\textquotesingle{}un nombre entier de type long 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em n} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le nombre de chiffres calculés.
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_aa4b5ea98d589c0df414bdb825606c6ff}\label{dh__prime_8c_aa4b5ea98d589c0df414bdb825606c6ff}} 
+\index{dh\_prime.c@{dh\_prime.c}!puissance\_mod\_n@{puissance\_mod\_n}}
+\index{puissance\_mod\_n@{puissance\_mod\_n}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{puissance\_mod\_n()}{puissance\_mod\_n()}}
+{\footnotesize\ttfamily long puissance\+\_\+mod\+\_\+n (\begin{DoxyParamCaption}\item[{long}]{a,  }\item[{long}]{e,  }\item[{long}]{n }\end{DoxyParamCaption})}
+
+
+
+puissance modulaire, calcule a$^\wedge$e mod n a$\ast$a peut dépasser la capacité d\textquotesingle{}un long \href{https://www.labri.fr/perso/betrema/deug/poly/exp-rapide.html}{\texttt{ https\+://www.\+labri.\+fr/perso/betrema/deug/poly/exp-\/rapide.\+html}} vu au S1 en Python 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em a} & \+: nombre de base \\
+\hline
+\mbox{\texttt{ in}}  & {\em e} & \+: puissance \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & \+: modulo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le nombre a à la puissance e modulo n 
+\end{DoxyReturn}
+puissance modulaire, calcule a$^\wedge$e mod n a$\ast$a peut dépasser la capacité d\textquotesingle{}un long \href{https://www.labri.fr/perso/betrema/deug/poly/exp-rapide.html}{\texttt{ https\+://www.\+labri.\+fr/perso/betrema/deug/poly/exp-\/rapide.\+html}} vu au S1 en Python 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em a} & \+: nombre de base \\
+\hline
+\mbox{\texttt{ in}}  & {\em e} & \+: puissance \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & \+: modulo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le nombre a à la puissance e modulo n
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_afc7e7e847ee702c67f816eac7d021579}\label{dh__prime_8c_afc7e7e847ee702c67f816eac7d021579}} 
+\index{dh\_prime.c@{dh\_prime.c}!rabin@{rabin}}
+\index{rabin@{rabin}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{rabin()}{rabin()}}
+{\footnotesize\ttfamily int rabin (\begin{DoxyParamCaption}\item[{long}]{a,  }\item[{long}]{n }\end{DoxyParamCaption})}
+
+
+
+test de Rabin sur la pimarité d\textquotesingle{}un entier 
+
+c\textquotesingle{}est un test statistique. Il est plus rapide que le précédent. 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em a} & \+: on met 2, ça marche \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & \+: le nombre à tester \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 il est premier, 0 sinon 
+\end{DoxyReturn}
+test de Rabin sur la pimarité d\textquotesingle{}un entier c\textquotesingle{}est un test statistique. Il est plus rapide que le précédent. 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em a} & \+: on met 2, ça marche \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & \+: le nombre à tester \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 il est premier, 0 sinon
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_a3e7a48022f91e807829a2488d451dd9a}\label{dh__prime_8c_a3e7a48022f91e807829a2488d451dd9a}} 
+\index{dh\_prime.c@{dh\_prime.c}!random\_long@{random\_long}}
+\index{random\_long@{random\_long}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{random\_long()}{random\_long()}}
+{\footnotesize\ttfamily long random\+\_\+long (\begin{DoxyParamCaption}\item[{long}]{min,  }\item[{long}]{max }\end{DoxyParamCaption})}
+
+
+
+génère un uint aléatoire entre min et max 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em min} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+n \+: min≤n≤max 
+\end{DoxyReturn}
+génère un uint aléatoire entre min et max 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em min} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+n \+: min≤n≤max
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_a52d24f65da0f678f4e6aef536f7eab08}\label{dh__prime_8c_a52d24f65da0f678f4e6aef536f7eab08}} 
+\index{dh\_prime.c@{dh\_prime.c}!seek\_generator@{seek\_generator}}
+\index{seek\_generator@{seek\_generator}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{seek\_generator()}{seek\_generator()}}
+{\footnotesize\ttfamily long seek\+\_\+generator (\begin{DoxyParamCaption}\item[{long}]{start,  }\item[{long}]{p }\end{DoxyParamCaption})}
+
+
+
+recherche d\textquotesingle{}un générateur du groupe (corps) cyclique Z/pZ avec p premier 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em start} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em p} & (nombre premier) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le générateur 
+\end{DoxyReturn}
+recherche d\textquotesingle{}un générateur du groupe (corps) cyclique Z/pZ avec p premier 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em start} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em p} & (nombre premier) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le générateur
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+p est un premier de Sophie Germain ie p =2q+1 avec q premier
+
+si p = \textbackslash{}prod(i=1,k,\{p\+\_\+i\}$^\wedge$\{n\+\_\+i\}) alors g est un générateur si \textbackslash{}forall i 1..k, g$^\wedge$p\+\_\+i != 1 (mod p) comme p = 2q+1 et q premier, k = 2 et p\+\_\+i = 2 et q. il suffit que g$^\wedge$2 et g$^\wedge$q soient tous les deux différents de 1 (mod p)
+\end{DoxyNote}
+\mbox{\Hypertarget{dh__prime_8c_a9fb916b1625f5ad3948632775fc41810}\label{dh__prime_8c_a9fb916b1625f5ad3948632775fc41810}} 
+\index{dh\_prime.c@{dh\_prime.c}!test\_prime@{test\_prime}}
+\index{test\_prime@{test\_prime}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{test\_prime()}{test\_prime()}}
+{\footnotesize\ttfamily int test\+\_\+prime (\begin{DoxyParamCaption}\item[{long}]{n }\end{DoxyParamCaption})}
+
+test de primarité, crible d\textquotesingle{}Erathostène 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em n} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+1 le nombre est premier, 0 sinon
+\end{DoxyReturn}
+\mbox{\Hypertarget{dh__prime_8c_a6bbcd4f3b3ff639abcb6c67574ff0ca4}\label{dh__prime_8c_a6bbcd4f3b3ff639abcb6c67574ff0ca4}} 
+\index{dh\_prime.c@{dh\_prime.c}!xchange\_shared\_key@{xchange\_shared\_key}}
+\index{xchange\_shared\_key@{xchange\_shared\_key}!dh\_prime.c@{dh\_prime.c}}
+\doxysubsubsection{\texorpdfstring{xchange\_shared\_key()}{xchange\_shared\_key()}}
+{\footnotesize\ttfamily long xchange\+\_\+shared\+\_\+key (\begin{DoxyParamCaption}\item[{long}]{generateur,  }\item[{long}]{premier }\end{DoxyParamCaption})}
+
+
+
+similateur d\textquotesingle{}échange de clefs de Diffie-\/\+Hellman par réseau 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em premier} & \+: un nombre premier \\
+\hline
+\mbox{\texttt{ in}}  & {\em generateur} & \+: un générateur du groupe Z/premierZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la clef commune générée 
+\end{DoxyReturn}
+similateur d\textquotesingle{}échange de clefs de Diffie-\/\+Hellman par réseau 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em premier} & \+: un nombre premier \\
+\hline
+\mbox{\texttt{ in}}  & {\em generateur} & \+: un générateur du groupe Z/premierZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la clef commune générée
+\end{DoxyReturn}

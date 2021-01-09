@@ -1,0 +1,82 @@
+\hypertarget{xor_8h}{}\doxysection{Référence du fichier xor.\+h}
+\label{xor_8h}\index{xor.h@{xor.h}}
+
+
+Header de \mbox{\hyperlink{dh__prime_8c}{dh\+\_\+prime.\+c}} et \mbox{\hyperlink{dh__genkey_8c}{dh\+\_\+genkey.\+c}}.  
+
+
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{xor_8h_ab2fd325b3b87a8109bbdb6f604711ce0}{xor}} (char $\ast$file\+\_\+name, char $\ast$file\+\_\+to\+\_\+write, char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Effectue le cryptage xor en prenant chaque caractère du fichier d\textquotesingle{}entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{xor_8h_a7901cfb954c076d8f67565b3157466cd}{test\+\_\+\+Files\+Are\+Not\+Equals}} (char $\ast$filename\+\_\+B, char $\ast$filename\+\_\+A)
+\begin{DoxyCompactList}\small\item\em Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Header de \mbox{\hyperlink{dh__prime_8c}{dh\+\_\+prime.\+c}} et \mbox{\hyperlink{dh__genkey_8c}{dh\+\_\+genkey.\+c}}. 
+
+Header de \mbox{\hyperlink{xor_8c}{xor.\+c}} et \mbox{\hyperlink{dh__crypt_8c}{dh\+\_\+crypt.\+c}}.
+
+\begin{DoxyAuthor}{Auteur}
+Valentin Tahon 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janvier 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{xor_8h_a7901cfb954c076d8f67565b3157466cd}\label{xor_8h_a7901cfb954c076d8f67565b3157466cd}} 
+\index{xor.h@{xor.h}!test\_FilesAreNotEquals@{test\_FilesAreNotEquals}}
+\index{test\_FilesAreNotEquals@{test\_FilesAreNotEquals}!xor.h@{xor.h}}
+\doxysubsubsection{\texorpdfstring{test\_FilesAreNotEquals()}{test\_FilesAreNotEquals()}}
+{\footnotesize\ttfamily int test\+\_\+\+Files\+Are\+Not\+Equals (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename\+\_\+B,  }\item[{char $\ast$}]{filename\+\_\+A }\end{DoxyParamCaption})}
+
+
+
+Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em filename\+\_\+B} & \+: le fichier modifié \\
+\hline
+\mbox{\texttt{ in}}  & {\em filename\+\_\+A} & \+: le fichier d\textquotesingle{}origine \\
+\hline
+\end{DoxyParams}
+Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em filename\+\_\+B} & \+: le fichier modifié \\
+\hline
+\mbox{\texttt{ in}}  & {\em filename\+\_\+A} & \+: le fichier d\textquotesingle{}origine\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{xor_8h_ab2fd325b3b87a8109bbdb6f604711ce0}\label{xor_8h_ab2fd325b3b87a8109bbdb6f604711ce0}} 
+\index{xor.h@{xor.h}!xor@{xor}}
+\index{xor@{xor}!xor.h@{xor.h}}
+\doxysubsubsection{\texorpdfstring{xor()}{xor()}}
+{\footnotesize\ttfamily void xor (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name,  }\item[{char $\ast$}]{file\+\_\+to\+\_\+write,  }\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+Effectue le cryptage xor en prenant chaque caractère du fichier d\textquotesingle{}entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & \+: nom du fichier source \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+\_\+to\+\_\+write} & \+: nom du fichier de destination \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & \+: clef de chiffrement \\
+\hline
+\end{DoxyParams}
+Effectue le cryptage xor en prenant chaque caractère du fichier d\textquotesingle{}entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie 
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & \+: nom du fichier source \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+\_\+to\+\_\+write} & \+: nom du fichier de destination \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & \+: clef de chiffrement\\
+\hline
+\end{DoxyParams}

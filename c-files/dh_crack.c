@@ -13,6 +13,8 @@
 int main(int argc, char *argv[]) {
     /// \brief Programme principal, traite les arguments fournis lors de l'appel du programme
     /// Accepte les options -i (fichier en entrée), -k (taille de la clef de chiffrement), -m (mode de chiffrement), -h (affiche l'aide)
+    /// \param[in] argc : nombre d'arguments de l'appel du programme
+    /// \param[in] argv[] : arguments de l'appel du programme
     int opt;
     
     int i=0;

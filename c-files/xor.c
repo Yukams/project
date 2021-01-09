@@ -11,6 +11,9 @@
 // Encrypt the message contained in <file_name> with the <key> and writes it in <file_to_write>
 void xor(char* file_name, char* file_to_write, char* key) {
     /// \brief Effectue le cryptage xor en prenant chaque caractère du fichier d'entrée et en effectuant un cryptage XOR avec un caracètre de la clef fournie. Ecris ensuite le caractère crypté dans le fichier de sortie
+    /// \param[in] file_name : nom du fichier source
+    /// \param[in] file_to_write : nom du fichier de destination
+    /// \param[in] key : clef de chiffrement
     FILE* fromFile = fopen(file_name, "r");
     FILE* toFile = fopen(file_to_write, "w");
     if (fromFile == NULL || toFile == NULL) {
@@ -37,6 +40,7 @@ void xor(char* file_name, char* file_to_write, char* key) {
 // Return file size
 int getFileSize(FILE* file) {
     /// \brief Calcule la taille du fichier en nombre de caractères
+    /// \param[in] file : le fichier concerné
     /// \return size+1 qui correspond à la taille réelle
     fseek(file, 0L, SEEK_END);
     int size = ftell(file);
@@ -49,6 +53,8 @@ int getFileSize(FILE* file) {
 // B = Before, A = After
 int test_FilesAreNotEquals(char* filename_B, char* filename_A) {
     /// \brief Vérifie que le fichier en entrée soit différents de celui en sortie, en conservant le même nombre de caractères
+    /// \param[in] filename_B : le fichier modifié
+    /// \param[in] filename_A : le fichier d'origine
     // Tests if files content is identical
     FILE* file_B = fopen(filename_B, "r");
     FILE* file_A = fopen(filename_A, "r");
@@ -61,12 +67,12 @@ int test_FilesAreNotEquals(char* filename_B, char* filename_A) {
         return 1;
     }
     
-    char ch1, ch2;
+    int ch1, ch2;
     while((ch1 = fgetc(file_B)) != EOF && (ch2 = fgetc(file_A))) {
         if (ch1 != ch2) {
-            return 1;
             fclose(file_B);
             fclose(file_A);
+            return 1;
         }
     }
 

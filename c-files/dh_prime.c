@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <assert.h>
 #include <time.h>
 #include "../Headers/dh_prime.h"
@@ -12,7 +11,8 @@
 
 long random_long(long min,long max){
 /// \brief génère un uint aléatoire entre min et max
-/// \param[in] min et max des uint
+/// \param[in] min
+/// \param[in] max
 /// \return n : min≤n≤max
   return ((rand()*time(0))%(max-min)) + min;
 }
@@ -22,6 +22,10 @@ long puissance_mod_n (long a, long e, long n) {
   /// a*a peut dépasser la capacité d'un long
   /// https://www.labri.fr/perso/betrema/deug/poly/exp-rapide.html
   /// vu au S1 en Python
+  /// \param[in] a : nombre de base
+  /// \param[in] e : puissance
+  /// \param[in] n : modulo
+  /// \return le nombre a à la puissance e modulo n
   long p;
   for (p = 1; e > 0; e = e / 2) {
     if (e % 2 != 0)
@@ -33,6 +37,7 @@ long puissance_mod_n (long a, long e, long n) {
 
 int test_prime (long n) {
 /// \brief test de primarité, crible d'Erathostène
+/// \param[in] n
 /// \returns 1 le nombre est premier, 0 sinon
   long d;
 
@@ -72,7 +77,8 @@ int rabin (long a, long n) {
 long generePremierRabin(long min,long max,int *cpt){
   /// \brief fournit un nombre premier entre min et max.
   /// La primarité est vérifiée avec le test de rabin
-  /// \param[in] min et max
+  /// \param[in] min
+  /// \param[in] max
   /// \param[out] cpt : le nombre d'essais pour trouver le nombre
   /// \returns un nombre premier p min≤p≤max
   long num;
@@ -110,6 +116,9 @@ long genPrimeSophieGermain(long min,long max,int *cpt){
 
 long seek_generator(long start,long p){
   /// \brief recherche d'un générateur du groupe (corps) cyclique Z/pZ avec p premier
+  /// \param[in] start
+  /// \param[in] p (nombre premier)
+  /// \return le générateur
   long q = (p-1)/2; /// \note p est un premier de Sophie Germain ie p =2q+1 avec q premier
 
   /// \note si p = \prod(i=1,k,{p_i}^{n_i}) alors g est un générateur si \forall i 1..k, g^p_i != 1 (mod p)
@@ -124,7 +133,8 @@ long seek_generator(long start,long p){
 
 long xchange_shared_key(long generateur, long premier){
 /// \brief similateur d'échange de clefs de Diffie-Hellman par réseau
-/// \param[in] premier : un nombre premier, generateur : un générateur du groupe Z/premierZ
+/// \param[in] premier : un nombre premier
+/// \param[in] generateur : un générateur du groupe Z/premierZ
 /// \returns la clef commune générée
     long a = random_long(1, premier-1);
     printf("\n%s[LOCAL]%s Alice a choisi \"a\" au hasard : %ld\n", GRN, WHITE, a);
@@ -158,6 +168,8 @@ long xchange_shared_key(long generateur, long premier){
 long generate_shared_key(long min,long max){
   /// \brief calcule un nombre premier p de Sophie Germain et un générateur du groupe p/Zp.
   /// appelle le simulateur d'échange de clef partagée.
+  /// \param[in] min
+  /// \param[in] max
   /// \returns la clef partagée
   int cpt;
   printf("\nGénération de la clef partagée\n");
@@ -172,7 +184,8 @@ long generate_shared_key(long min,long max){
 
 long int_pow(long a, long e) {
   /// \brief puissance russe
-  /// \param[in] : a l'entier et e l'exposant
+  /// \param[in] : a l'entier
+  /// \param[in] e l'exposant
   /// \returns : a^e
   long p;
 
@@ -186,6 +199,7 @@ long int_pow(long a, long e) {
 
 int nb_digit_base10(long n){
   /// \brief compte le nombre de chiffres d'un nombre entier de type long
+  /// \param[in] n
   /// \returns le nombre de chiffres calculés.
   int cpt = 0;
   while (n!=0){

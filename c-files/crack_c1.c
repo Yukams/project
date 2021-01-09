@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
 #include "../Headers/crack_c1.h"
 
@@ -11,6 +10,7 @@
 // Return file size
 int getFileSize(FILE* file) {
     /// \brief Calcule la taille du fichier en nombre de caractères
+    /// \param[in] file : le fichier concerné
     /// \return size+1 qui correspond à la taille réelle
     fseek(file, 0L, SEEK_END);
     int size = ftell(file);
@@ -21,6 +21,8 @@ int getFileSize(FILE* file) {
 void crack_c1(char* file_name, int key_length) {
     /// \brief Affiche à l'écran l'ensemble des chiffres de la clef qui correspondent à un dechiffrage ASCII
     /// Cette fonction n'affiche pas les combinaisons de clefs en tant que tel, ni les clefs les plus probables
+    /// \param[in] file_name : nom du fichier source
+    /// \param[in] key_length: longueur de la clef
     //ASCII values between 0 and 127
     FILE* fromFile = fopen(file_name, "r");
     
