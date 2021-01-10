@@ -65,6 +65,10 @@ int main(int argc, char *argv[]) {
                     break;
                 case 'k':
                     key_length = atoi(optarg);
+                    if(key_length == 0) {
+                        printf("\nKey length invalid\n");
+                        exit(255);
+                    }
                     break;
                 case '?':
                     printf("\nUsage : %s [-h] [-i filename] [-k key_length] [-m c1|all] [-d dictionnary]\n", argv[0]);
